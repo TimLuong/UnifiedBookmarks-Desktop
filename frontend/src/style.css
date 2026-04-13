@@ -1,0 +1,137 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Dark theme — Raindrop "night" ─────────────────── */
+:root, :root[data-theme="dark"] {
+  /* Backgrounds: subtly blueish-gray (hsl 228,3%) — not pure black */
+  --bg-deep:    hsl(228, 3%, 12%);
+  --bg:         hsl(228, 3%, 17%);
+  --bg-sidebar: hsl(228, 3%, 13%);
+  --bg-card:    hsl(228, 3%, 21%);
+  --bg-hover:   rgba(255,255,255,.07);
+  --bg-active:  hsl(228, 3%, 24%);
+
+  /* Borders — transparent overlays, very subtle */
+  --border:        rgba(255,255,255,.09);
+  --border-hover:  rgba(255,255,255,.16);
+  --border-active: rgba(255,255,255,.24);
+
+  /* Shadow dividers — Raindrop uses shadows not hard lines */
+  --shadow-clr:  rgba(0,0,0,.40);
+  --divider-clr: rgba(255,255,255,.07);
+
+  /* Text */
+  --text:           hsl(228, 3%, 90%);
+  --text-secondary: hsl(228, 3%, 65%);
+  --text-muted:     hsl(228, 3%, 44%);
+  --text-dim:       hsl(228, 3%, 28%);
+
+  /* Accent — warm amber (Raindrop night signature) */
+  --accent:     hsl(40, 52%, 71%);
+  --accent-hsl: 40, 52%, 71%;
+  --accent-dim: hsla(40, 52%, 71%, .13);
+
+  /* Semantic palette */
+  --blue:   hsl(210, 68%, 62%);  --blue-dim:   hsla(210, 68%, 62%, .13);
+  --green:  hsl(145, 38%, 55%);  --green-dim:  hsla(145, 38%, 55%, .13);
+  --yellow: hsl(40, 52%, 71%);   --yellow-dim: hsla(40, 52%, 71%, .13);
+  --red:    hsl(3, 80%, 67%);    --red-dim:    hsla(3, 80%, 67%, .13);
+  --purple: hsl(268, 38%, 66%);  --purple-dim: hsla(268, 38%, 66%, .13);
+  --orange: hsl(28, 72%, 62%);   --orange-dim: hsla(28, 72%, 62%, .13);
+  --cyan:   hsl(192, 42%, 58%);  --cyan-dim:   hsla(192, 42%, 58%, .13);
+
+  --radius: 6px;
+  --radius-sm: 3px;
+
+  /* System fonts — clean, native-feeling (Raindrop's exact stack) */
+  font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* ── Light theme — Raindrop default ────────────────── */
+:root[data-theme="light"] {
+  --bg-deep:    hsl(0, 0%, 93%);
+  --bg:         hsl(0, 0%, 100%);
+  --bg-sidebar: hsl(36, 8%, 96%);   /* warm cream sidebar */
+  --bg-card:    hsl(0, 0%, 100%);
+  --bg-hover:   rgba(0,0,0,.05);
+  --bg-active:  hsl(0, 0%, 90%);
+
+  --border:        rgba(0,0,0,.10);
+  --border-hover:  rgba(0,0,0,.18);
+  --border-active: rgba(0,0,0,.28);
+
+  --shadow-clr:  rgba(0,0,0,.13);
+  --divider-clr: rgba(0,0,0,.07);
+
+  --text:           hsl(0, 0%, 10%);
+  --text-secondary: hsl(0, 0%, 30%);
+  --text-muted:     hsl(0, 0%, 50%);
+  --text-dim:       hsl(0, 0%, 70%);
+
+  /* Accent — medium blue in light mode */
+  --accent:     hsl(207, 80%, 49%);
+  --accent-hsl: 207, 80%, 49%;
+  --accent-dim: hsla(207, 80%, 49%, .10);
+
+  --blue:   hsl(207, 80%, 49%);  --blue-dim:   hsla(207, 80%, 49%, .10);
+  --green:  hsl(145, 55%, 38%);  --green-dim:  hsla(145, 55%, 38%, .10);
+  --yellow: hsl(38, 80%, 42%);   --yellow-dim: hsla(38, 80%, 42%, .10);
+  --red:    hsl(0, 75%, 52%);    --red-dim:    hsla(0, 75%, 52%, .10);
+  --purple: hsl(268, 50%, 52%);  --purple-dim: hsla(268, 50%, 52%, .10);
+  --orange: hsl(28, 80%, 48%);   --orange-dim: hsla(28, 80%, 48%, .10);
+  --cyan:   hsl(192, 60%, 42%);  --cyan-dim:   hsla(192, 60%, 42%, .10);
+}
+
+/* ── Sand theme — warm cream/beige ─────────────────── */
+:root[data-theme="sand"] {
+  --bg-deep:    hsl(38, 18%, 86%);
+  --bg:         hsl(38, 22%, 94%);
+  --bg-sidebar: hsl(38, 18%, 90%);
+  --bg-card:    hsl(40, 30%, 98%);
+  --bg-hover:   rgba(0,0,0,.06);
+  --bg-active:  hsl(38, 16%, 84%);
+
+  --border:        rgba(0,0,0,.10);
+  --border-hover:  rgba(0,0,0,.18);
+  --border-active: rgba(0,0,0,.28);
+
+  --shadow-clr:  rgba(0,0,0,.14);
+  --divider-clr: rgba(0,0,0,.08);
+
+  --text:           hsl(30, 15%, 12%);
+  --text-secondary: hsl(30, 8%, 32%);
+  --text-muted:     hsl(30, 5%, 52%);
+  --text-dim:       hsl(30, 4%, 68%);
+
+  /* Accent — warm tan/brown */
+  --accent:     hsl(32, 58%, 38%);
+  --accent-hsl: 32, 58%, 38%;
+  --accent-dim: hsla(32, 58%, 38%, .12);
+
+  --blue:   hsl(207, 65%, 45%);  --blue-dim:   hsla(207, 65%, 45%, .12);
+  --green:  hsl(145, 50%, 35%);  --green-dim:  hsla(145, 50%, 35%, .12);
+  --yellow: hsl(38, 75%, 40%);   --yellow-dim: hsla(38, 75%, 40%, .12);
+  --red:    hsl(0, 70%, 48%);    --red-dim:    hsla(0, 70%, 48%, .12);
+  --purple: hsl(268, 45%, 48%);  --purple-dim: hsla(268, 45%, 48%, .12);
+  --orange: hsl(28, 75%, 44%);   --orange-dim: hsla(28, 75%, 44%, .12);
+  --cyan:   hsl(192, 55%, 38%);  --cyan-dim:   hsla(192, 55%, 38%, .12);
+}
+
+/* ── Layout ────────────────────────────────────────── */
+
+html { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--text); height: 100%; margin: 0; padding: 0; overflow: hidden; }
+#app { display: flex; height: 100%; }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(128,128,128,.25); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(128,128,128,.42); }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
