@@ -1,3 +1,13 @@
 build/bin
 node_modules
 frontend/dist
+
+# Environment / secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Personal data / editor artifacts
+openclaw.ai
+package.json
+*.log
