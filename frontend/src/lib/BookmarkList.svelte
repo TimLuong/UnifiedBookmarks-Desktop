@@ -390,8 +390,8 @@
     align-items: center;
     gap: 12px;
     padding: 10px 16px;
-    box-shadow: inset 0 -1px 0 var(--divider-clr);
-    transition: background .08s;
+    border-bottom: 1px solid var(--border);
+    transition: background .12s;
     cursor: pointer;
     min-height: 48px;
   }
@@ -508,12 +508,14 @@
   }
   .mini-tag {
     font-size: 11px;
-    color: var(--text-muted);
+    color: var(--accent);
     padding: 1px 7px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--accent-dim);
     border-radius: 20px;
     white-space: nowrap;
     flex-shrink: 0;
+    background: var(--accent-dim);
+    font-weight: 500;
   }
 
   /* Para badges */
@@ -553,17 +555,18 @@
     color: var(--text-dim);
     flex-shrink: 0;
     transition: transform .15s ease;
-    opacity: 0.5;
+    opacity: 0.4;
   }
   .bm-chevron-open { transform: rotate(180deg); opacity: 1; color: var(--accent); }
-  .bm-row:hover .bm-chevron { opacity: 0.8; }
-  .bm-row-expanded { background: var(--bg-hover); }
+  .bm-row:hover .bm-chevron { opacity: 0.7; }
+  .bm-row-expanded { background: var(--bg-hover); border-left: 2px solid var(--accent); }
 
   /* ── DETAIL PANEL ──────────────────────── */
   .bm-detail {
     padding: 8px 16px 12px 84px; /* indent past thumb */
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--divider-clr);
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -650,11 +653,12 @@
     display: flex;
     flex-direction: column;
     min-height: 160px;
-    transition: border-color .12s, box-shadow .12s;
+    transition: border-color .15s, box-shadow .15s, transform .15s;
   }
   .bm-card:hover {
-    border-color: var(--border-hover);
-    box-shadow: 0 4px 16px rgba(0,0,0,.18);
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(255, 77, 77, .15);
+    transform: translateY(-1px);
   }
 
   /* Card thumbnail: colored area with favicon centered */

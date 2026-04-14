@@ -57,7 +57,7 @@
   </div>
   <div class="stats-right">
     <button class="console-toggle" class:active={$showConsole} on:click={() => showConsole.update(v => !v)} title="Toggle Console (Ctrl+`)">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4,17 10,11 4,5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+      🖥️
       <span>terminal</span>
       {#if $consoleLogs.length > 0}
         <span class="toggle-count">{$consoleLogs.length}</span>
@@ -72,7 +72,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 3px 12px;
-    box-shadow: inset 0 1px 0 var(--shadow-clr);
+    border-top: 1px solid var(--border);
     background: var(--bg-deep);
     font-size: 12px;
     min-height: 26px;
@@ -104,24 +104,24 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 1px 6px;
+    padding: 2px 8px;
     border: 1px solid transparent;
     border-radius: var(--radius-sm);
     background: none;
     color: var(--text-dim);
     cursor: pointer;
-    font-size: 10px;
-    font-weight: 500;
-    transition: all .1s;
+    font-size: 11px;
+    font-weight: 600;
+    transition: all .15s;
   }
-  .console-toggle:hover { color: var(--text-muted); background: var(--bg-hover); }
-  .console-toggle.active { border-color: var(--border); color: var(--blue); background: var(--bg-card); }
+  .console-toggle:hover { color: var(--text-muted); background: var(--bg-hover); border-color: var(--border); }
+  .console-toggle.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
   .toggle-count {
-    font-size: 8px;
-    background: var(--border-active);
-    color: var(--text-secondary);
+    font-size: 9px;
+    background: var(--accent);
+    color: #fff;
     padding: 0 4px;
-    border-radius: 2px;
+    border-radius: 4px;
     font-weight: 700;
   }
 </style>

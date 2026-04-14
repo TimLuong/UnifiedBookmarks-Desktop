@@ -109,8 +109,7 @@
       <div class="tb-menu-wrap" on:click|stopPropagation>
         <button class="tbtn tbtn-profiles" class:active={showProfileFilter} class:has-filter={activeProfileCount > 0}
           on:click={() => { showProfileFilter = !showProfileFilter; showSortMenu = false; }}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"/></svg>
-          Profiles
+          👤 Profiles
           {#if activeProfileCount > 0}<span class="filter-badge">{activeProfileCount}</span>{/if}
           <svg class="chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6,9 12,15 18,9"/></svg>
         </button>
@@ -142,8 +141,7 @@
     <!-- Sort dropdown -->
     <div class="tb-menu-wrap" on:click|stopPropagation>
       <button class="tbtn tbtn-sort" class:active={showSortMenu} on:click={() => { showSortMenu = !showSortMenu; showViewPanel = false; }}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-        {sortLabel($sortBy)}
+        🔄 {sortLabel($sortBy)}
         <svg class="chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6,9 12,15 18,9"/></svg>
       </button>
       {#if showSortMenu}
@@ -171,16 +169,10 @@
     <!-- View toggle (List / Cards) -->
     <div class="view-toggle">
       <button class:active={$view === 'list'} on:click={() => view.set('list')} title="List">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
-        </svg>
-        List
+        📋 List
       </button>
       <button class:active={$view === 'cards'} on:click={() => view.set('cards')} title="Cards">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
-        </svg>
-        Cards
+        🎴 Cards
       </button>
     </div>
 
@@ -190,8 +182,7 @@
     <button class="tbtn tbtn-unique" class:active={$uniqueUrlsOnly}
       title={$uniqueUrlsOnly ? 'Showing unique URLs only (click to show all)' : 'Show all cross-profile duplicates'}
       on:click={() => uniqueUrlsOnly.update(v => !v)}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-      Unique
+      🔗 Unique
       {#if $uniqueUrlsOnly}<span class="filter-badge active">on</span>{/if}
     </button>
 
@@ -199,8 +190,7 @@
 
     <!-- Export -->
     <button class="tbtn" disabled={$loading === 'analyze'} on:click={() => dispatch('export')}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-      Export
+      📤 Export
     </button>
   </div>
 </div>
@@ -210,9 +200,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 14px;
-    box-shadow: inset 0 -1px 0 var(--shadow-clr);
-    background: var(--bg);
+    height: 48px;
+    padding: 0 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-deep);
     gap: 10px;
   }
   .toolbar-left { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 150px; }
@@ -229,9 +220,9 @@
     padding: 5px 12px;
     flex: 1;
     max-width: 320px;
-    transition: border-color .15s;
+    transition: border-color .15s, box-shadow .15s;
   }
-  .search-box:focus-within { border-color: var(--accent); }
+  .search-box:focus-within { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-dim); }
   .search-icon { color: var(--text-muted); flex-shrink: 0; }
   .search-box input {
     flex: 1;
@@ -271,8 +262,8 @@
     color: var(--text-secondary);
     font-size: 12px;
     cursor: pointer;
-    font-weight: 500;
-    transition: all .12s;
+    font-weight: 600;
+    transition: all .15s;
     white-space: nowrap;
   }
   .tbtn:hover, .tbtn.active { border-color: var(--border-hover); color: var(--text); background: var(--bg-hover); }
