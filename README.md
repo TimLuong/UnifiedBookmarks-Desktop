@@ -19,10 +19,15 @@ Everything runs **locally** — your bookmarks never leave your machine except f
 
 ---
 
-## 🖥 Screenshot
+## 🖥 Screenshots
 
-The sidebar shows your pipeline progress, Collections (browser profiles), PARA categories, and Tags.  
-The main panel lists bookmarks with their AI-assigned category, tags, relevance score, and folder path.
+**Main UI** — sidebar with pipeline steps, PARA navigation, Collections and Tags:
+
+![UnifiedBookmarks Desktop — main UI](docs/screenshot-empty.png)
+
+**Prompt Profiles** — customize the AI prompt and folder structure rules per profile:
+
+![UnifiedBookmarks Desktop — prompt profiles modal](docs/screenshot-prompts.png)
 
 ---
 
